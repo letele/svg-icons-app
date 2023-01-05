@@ -21,8 +21,7 @@
     "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "restart": "npm uninstall @letele/svg-icons && rimraf letele-svg-icons-0.1.0.tgz"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
