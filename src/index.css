@@ -14,3 +14,207 @@ html {
 a{
   text-decoration: none;
 }
+
+
+/* background colors */
+.bg-cyan{
+  background: cyan;
+}
+.bg-pink{
+  background: hotpink;
+}
+.bg-black3a{
+  background: #00000080;
+}
+
+/* Heights */
+.h-100vh{
+  height: 100vh;
+}
+.h-100pc{
+  height: 100%;
+}
+.h-fcnt{
+  height: fit-content;
+}
+
+.h-120px{
+  height: 120px;
+}
+/* Widths */
+.w-100vw{
+  width: 100vw;
+}
+.w-100pc{
+  width: 100%;
+}
+.w-fcnt{
+  width: fit-content;
+}
+
+.w-120px{
+  width: 120px;
+}
+
+
+/* Flex */
+.flex{
+  display: flex;
+}
+
+/* margins */
+.m-15em{
+  margin: 1.5em;
+}
+.ml-2em{
+  margin: 2em;
+}
+.mb-1em{
+  margin-bottom: 1em;
+}
+.mb-03em{
+  margin-bottom: 0.3em;
+}
+.mt-03em{
+  margin-top: 0.3em;
+}
+
+/* paddings */
+.p-1em{
+  padding: 1em;;
+}
+.pl-1em{
+  padding-left: 0.5em;;
+}
+.pr-05em{
+  padding-right: 0.5em;
+}
+
+/* Border radius */
+.br-50pc{
+  border-radius: 50%;
+}
+/* Text align */
+.txt-c{
+  text-align: center;
+}
+/* Letter spacing */
+.lsp-05em{
+  letter-spacing: 0.05em;
+}
+.lsp-013em{
+  letter-spacing: 0.13em;
+}
+
+/* Font-color */
+.fc-white{
+  color: #dbdada;
+}
+.fc-blue{
+  color: #6bbcff;
+}
+.fc-green{
+  color: #3dbc1d;
+}
+
+/* Font-size */
+.fs-12em{
+  font-size: 1.2em;
+}
+.fs-15em{
+  font-size: 1.5em;
+}
+.fs-18em{
+  font-size: 1.8em;
+}
+
+/* font-type */
+.monospace{
+  font-family: monospace;
+}
+.lucida{
+  font-family: "Lucida Console";
+}
+
+
+
+
+/* POSITION STYLES */
+.poa{
+  position: absolute;
+}
+.por{
+  position: relative;
+}
+/* Top */
+.t-0{
+  top: 0;
+}
+.t-100pc{
+  top: 100%;
+}
+.t-30px{
+  top: 30px;
+}
+.t-60px{
+  top: 120px;
+}
+.t-150px{
+  top: 160px;
+}
+.t-180px{
+  top: 180px;
+}
+.t-360px{
+  top: 330px;
+}
+/* Right */
+.r-0{
+  right: 0;
+}
+/* Bottom */
+.b-0{
+  bottom: 0;
+}
+/* Left */
+.l-0{
+  left: 0;
+}
+.l-100pc{
+  left: 100%;
+}
+.l-30px{
+  left: 30px;
+}
+.l-160px{
+  left: 160px;
+}
+.l-180px{
+  left: 180px;
+}
+.l-210px{
+  left: 210px;
+}
+.r-30px{
+  right: 60px;
+}
+
+
+
+
+/* z-index */
+.z-0{
+  z-index: 0;
+}
+.z-1{
+  z-index: 1;
+}
+.z-2{
+  z-index: 1;
+}
+
+/* overflow */
+.ovy-hide{
+  overflow-y: hidden;
+}
+
