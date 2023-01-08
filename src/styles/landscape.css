@@ -1,0 +1,17 @@
+@media (min-width:800px) {
+    :root{
+        --footer-w: 450px;
+        --footer-b:0.5em;
+        --footer-l: calc(0.5 * calc(100vw - var(--footer-w)));
+    }
+
+    .landscape footer{
+        bottom: var(--footer-b);
+        left:var(--footer-l);
+        width: var(--footer-w);
+    }
+
+    .landscape section{
+        height: calc(100% - calc(30px + 60px + var(--footer-b)));
+    }
+}

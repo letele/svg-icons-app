@@ -4,9 +4,9 @@ function Repertoire(){
 
     return(
         <section>
-            <h1>Repertoire</h1>
+            
         </section>
     )
 }
 
-export default withLayout(Repertoire)
+export default withLayout(Repertoire, "Repertoire")
