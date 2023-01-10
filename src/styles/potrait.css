@@ -5,8 +5,8 @@
         width: 100%;
     }
 
-    .landscape section{
-        height: calc(100% - calc(30px + 60px));
+    .potrait section{
+        height: calc(100% - 90px);
     }
  
 }

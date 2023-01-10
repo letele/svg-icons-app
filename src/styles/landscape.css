@@ -12,6 +12,6 @@
     }
 
     .landscape section{
-        height: calc(100% - calc(30px + 60px + var(--footer-b)));
+        height: calc(100% - calc(90px + var(--footer-b)));
     }
 }

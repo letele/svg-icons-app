@@ -15,6 +15,9 @@ a{
 }
 
 /* background colors */
+.bg-white{
+  background: #fff;
+}
 .bg-cyan{
   background: cyan;
 }
@@ -33,6 +36,12 @@ a{
 .bg-lblue{
   background: #0da7e4;
 }
+.bg-green{
+  background: #41a827;
+}
+.bg-lgreen{
+  background: #9bc777;
+}
 /* hover-background */
 .hov-bg:hover{
   background: #5555557c;
@@ -44,6 +53,9 @@ a{
 }
 .h-100pc{
   height: 100%;
+}
+.h-70pc{
+  height: 70%;
 }
 .h-fcnt{
   height: fit-content;
@@ -57,16 +69,38 @@ a{
 .h-60px{
   height: 60px;
 }
-
+.h-70px{
+  height: 70px;
+}
+.h-90px{
+  height: 90px;
+}
 .h-120px{
   height: 120px;
 }
+.h-210px{
+  height: 210px;
+}
+.h-300px{
+  height: 300px;
+}
+.h-330px{
+  height: 330px;
+}
+
+
 /* Widths */
 .w-100vw{
   width: 100vw;
 }
 .w-100pc{
   width: 100%;
+}
+.w-70pc{
+  width: 70%;
+}
+.w-10pc{
+  width: 10%;
 }
 .w-fcnt{
   width: fit-content;
@@ -77,6 +111,12 @@ a{
 .w-50px{
   width: 50px;
 }
+.w-70px{
+  width: 70px;
+}
+.w-90px{
+  width: 90px;
+}
 .w-120px{
   width: 120px;
 }
@@ -84,10 +124,72 @@ a{
   width: 150px;
 }
 
+.w-330px{
+  width: 330px;
+}
+.w-420px{
+  width: 420px;
+}
+.w-450px{
+  width: 460px;
+}
+
+/* overflow */
+.ov-auto{
+  overflow: auto;
+}
+.ovy-auto{
+  overflow-y: auto;
+}
+.ovy-hide{
+  overflow-y: hidden;
+}
+
+/* Borders */
+.bb-black{
+  border-bottom: 1px solid #000;
+}
+.bl-black{
+  border-left: 1px solid #000;
+}
+
+.btdash-lgray{
+  border-top: 1px dashed #9c9c9c;
+}
+.bt-blue{
+  border-top: 1px solid #0da7e4;
+}
+/* Border radius */
+.br-50pc{
+  border-radius: 50%;
+}
+
+
+/* Grid */
+.grid{
+  display: grid;
+}
+.gr-c15{
+  grid-template-columns: repeat(15,1fr);
+}
+.gr-r15{
+  grid-template-rows: repeat(15,1fr);
+}
+
 
 /* Flex */
 .flex{
   display: flex;
+}
+.flex-wrap{
+  flex-wrap: wrap;
+}
+
+.gap-05em{
+  gap: 0.5em;
+}
+.gap-15em{
+  gap: 1.5em;
 }
 .ali-c{
   align-items: center;
@@ -101,19 +203,28 @@ a{
 .jus-even{
   justify-content: space-evenly;
 }
-.gap-05em{
-  gap: 0.5em;
-}
+
+
 
 /* margins */
 .m-0-auto{
   margin: 0 auto;
 }
+
+.m-1em{
+  margin: 1em;
+}
 .m-15em{
   margin: 1.5em;
 }
+.ml-1em{
+  margin-left: 1em;
+}
 .ml-2em{
-  margin: 2em;
+  margin-left: 2em;
+}
+.ml-auto{
+  margin-left: auto;
 }
 .mr-05em{
   margin-right: 0.5em;
@@ -127,8 +238,14 @@ a{
 .mb-05em{
   margin-bottom: 0.5em;
 }
+.mt-05em{
+  margin-top: 0.5em;
+}
 .mt-03em{
   margin-top: 0.3em;
+}
+.mt-1em{
+  margin-top: 1em;
 }
 
 /* paddings */
@@ -138,11 +255,14 @@ a{
 .p-1em{
   padding: 1em;;
 }
+.pl-05em{
+  padding-left: 0.5em;;
+}
 .pl-1em{
   padding-left: 1em;;
 }
-.pl-05em{
-  padding-left: 0.5em;;
+.pl-2em{
+  padding-left: 2em;;
 }
 .pr-05em{
   padding-right: 0.5em;
@@ -150,10 +270,8 @@ a{
 .pt-05em{
   padding-top: 0.5em;
 }
-/* Border radius */
-.br-50pc{
-  border-radius: 50%;
-}
+
+
 /* Text align */
 .txt-c{
   text-align: center;
@@ -178,6 +296,9 @@ a{
 }
 
 /* Font-size */
+.fs-11em{
+  font-size: 1.1em;
+}
 .fs-12em{
   font-size: 1.2em;
 }
@@ -186,6 +307,21 @@ a{
 }
 .fs-18em{
   font-size: 1.8em;
+}
+.fs-25em{
+  font-size: 2.5em;
+}
+
+.fs-15px{
+  font-size: 15px;
+}
+.fs-50px{
+  font-size: 50px;
+}
+
+/* Font-weight */
+.fw-bold{
+  font-weight: bold;
 }
 
 /* font-type */
@@ -201,20 +337,38 @@ a{
 .poa{
   position: absolute;
 }
+.pof{
+  position: fixed;
+}
 .por{
   position: relative;
 }
 /* Top */
-.t-0{
-  top: 0;
-}
 .t-100pc{
   top: 100%;
+}
+.t-15pc{
+  top: 15%;
+}
+.t-50pc{
+  top: 50%;
+}
+.t--06em{
+  top: -0.6em;
+}
+.t-03em{
+  top: 0.3em;
 }
 .t-30px{
   top: 30px;
 }
 .t-60px{
+  top: 60px;
+}
+.t-100px{
+  top: 115px;
+}
+.t-120px{
   top: 120px;
 }
 .t-150px{
@@ -234,16 +388,34 @@ a{
 .b-0{
   bottom: 0;
 }
+.b--35px{
+  bottom: -35px;
+}
 .b-30px{
   bottom: 30px;
 }
 
 /* Left */
+.l-100pc{
+  left: 100%;
+}
+.l-15pc{
+  left: 15%;
+}
+.l-50pc{
+  left: 50%;
+}
+.l--08em{
+  left: -0.8em;
+}
 .l-0{
   left: 0;
 }
-.l-100pc{
-  left: 100%;
+.l-05em{
+  left: 0.5em;
+}
+.l-10px{
+  left: 10px;
 }
 .l-30px{
   left: 30px;
@@ -266,6 +438,9 @@ a{
 
 
 /* z-index */
+.z--1{
+  z-index: -1;
+}
 .z-0{
   z-index: 0;
 }
@@ -276,8 +451,28 @@ a{
   z-index: 1;
 }
 
-/* overflow */
-.ovy-hide{
-  overflow-y: hidden;
+/* Transformations */
+.trot-90{
+  transform: rotate(-90deg);
 }
+.trotX-180{
+  transform: rotateX(180deg);
+}
+.torigin-tl{
+  transform-origin: top left;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
