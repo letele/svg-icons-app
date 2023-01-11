@@ -46,6 +46,11 @@ a{
 .hov-bg:hover{
   background: #5555557c;
 }
+/* Cursor */
+.c-arrow:hover{
+  cursor: default;
+}
+
 
 /* Heights */
 .h-100vh{
@@ -77,6 +82,9 @@ a{
 }
 .h-120px{
   height: 120px;
+}
+.h-180px{
+  height: 180px;
 }
 .h-210px{
   height: 210px;
@@ -114,6 +122,9 @@ a{
 .w-70px{
   width: 70px;
 }
+.w-80px{
+  width: 80px;
+}
 .w-90px{
   width: 90px;
 }
@@ -123,7 +134,6 @@ a{
 .w-150px{
   width: 150px;
 }
-
 .w-330px{
   width: 330px;
 }
@@ -133,10 +143,17 @@ a{
 .w-450px{
   width: 460px;
 }
+.mw-80px{
+  min-width: 80px;
+}
+
 
 /* overflow */
 .ov-auto{
   overflow: auto;
+}
+.ov-hidden{
+  overflow: hidden;
 }
 .ovy-auto{
   overflow-y: auto;
@@ -146,6 +163,9 @@ a{
 }
 
 /* Borders */
+.b-black{
+  border: 1px solid #000;
+}
 .bb-black{
   border-bottom: 1px solid #000;
 }
@@ -188,6 +208,9 @@ a{
 .gap-05em{
   gap: 0.5em;
 }
+.gap-1em{
+  gap: 1em;
+}
 .gap-15em{
   gap: 1.5em;
 }
@@ -197,6 +220,9 @@ a{
 .jus-c{
   justify-content: center;
 }
+.jus-e{
+  justify-content: end;
+}
 .jus-btwn{
   justify-content: space-between;
 }
@@ -204,24 +230,38 @@ a{
   justify-content: space-evenly;
 }
 
-
-
+/* Floats */
+.float-l{
+  float: left;
+}
 /* margins */
 .m-0-auto{
   margin: 0 auto;
 }
 
+.m-05em{
+  margin: 0.5em;
+}
 .m-1em{
   margin: 1em;
 }
 .m-15em{
   margin: 1.5em;
 }
+.ml-0{
+  margin-left: 0;
+}
+.ml-05em{
+  margin-left: 0.5em;
+}
 .ml-1em{
   margin-left: 1em;
 }
 .ml-2em{
   margin-left: 2em;
+}
+.ml-25em{
+  margin-left: 2.5em;
 }
 .ml-auto{
   margin-left: auto;
@@ -238,19 +278,25 @@ a{
 .mb-05em{
   margin-bottom: 0.5em;
 }
-.mt-05em{
-  margin-top: 0.5em;
-}
 .mt-03em{
   margin-top: 0.3em;
+}
+.mt-05em{
+  margin-top: 0.5em;
 }
 .mt-1em{
   margin-top: 1em;
 }
 
 /* paddings */
+.p-02-05em{
+  padding: 0.2em 0.5em;
+}
 .p-03em{
   padding: 0.3em;;
+}
+.p-05em{
+  padding: 0.5em;;
 }
 .p-1em{
   padding: 1em;;
@@ -284,7 +330,23 @@ a{
   letter-spacing: 0.13em;
 }
 
+
+
+/* Font-family */
+.arial{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.monospace{
+  font-family: monospace;
+}
+.lucida{
+  font-family: "Lucida Console";
+}
+
 /* Font-color */
+.fc-fff{
+  color: #fff;
+}
 .fc-white{
   color: #dbdada;
 }
@@ -296,6 +358,15 @@ a{
 }
 
 /* Font-size */
+.fs-8pt{
+  font-size: 8pt;
+}
+.fs-9pt{
+  font-size: 9pt;
+}
+.fs-11pt{
+  font-size: 11pt;
+}
 .fs-11em{
   font-size: 1.1em;
 }
@@ -323,14 +394,11 @@ a{
 .fw-bold{
   font-weight: bold;
 }
+.fw-normal{
+  font-weight: normal;
+}
 
-/* font-type */
-.monospace{
-  font-family: monospace;
-}
-.lucida{
-  font-family: "Lucida Console";
-}
+
 
 
 /* POSITION STYLES */
@@ -384,9 +452,19 @@ a{
 .r-0{
   right: 0;
 }
+.r-05em{
+  right: 0.5em;
+}
+.r-30px{
+  right: 60px;
+}
+
 /* Bottom */
 .b-0{
   bottom: 0;
+}
+.b-05em{
+  bottom: 0.5em;
 }
 .b--35px{
   bottom: -35px;
@@ -430,12 +508,6 @@ a{
   left: 210px;
 }
 
-.r-30px{
-  right: 60px;
-}
-
-
-
 
 /* z-index */
 .z--1{
@@ -461,10 +533,6 @@ a{
 .torigin-tl{
   transform-origin: top left;
 }
-
-
-
-
 
 
 
