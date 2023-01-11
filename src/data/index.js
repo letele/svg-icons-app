@@ -1,3 +1,4 @@
+export { notebooksData } from "./notebooksData";
 
 export { dataAnalystStats } from "./dataAnalysistStats";
 export { webDevStats } from "./webDevStats";
