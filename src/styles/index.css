@@ -14,6 +14,17 @@ a{
   text-decoration: none;
 }
 
+/* scroll-bar */
+/* width */
+::-webkit-scrollbar {
+  width: 3px;
+}
+/* handle */
+::-webkit-scrollbar-thumb {
+  background: #afafaf;
+}
+
+
 /* background colors */
 .bg-white{
   background: #fff;
@@ -51,6 +62,9 @@ a{
 .hov-bg:hover{
   background: #5555557c;
 }
+.hov-bgpink:hover{
+  background: hotpink;
+}
 /* Cursor */
 .c-arrow:hover{
   cursor: default;
@@ -71,7 +85,7 @@ a{
   height: fit-content;
 }
 .h-20px{
-  height: 30px;
+  height: 20px;
 }
 .h-30px{
   height: 30px;
@@ -121,6 +135,9 @@ a{
 .w-fcnt{
   width: fit-content;
 }
+.w-20px{
+  width: 20px;
+}
 .w-30px{
   width: 30px;
 }
@@ -153,6 +170,9 @@ a{
 }
 .mw-80px{
   min-width: 80px;
+}
+.maxw-595px{
+  max-width: 595px;
 }
 
 
@@ -225,6 +245,9 @@ a{
 .gap-15em{
   gap: 1.5em;
 }
+.gap-2em{
+  gap: 2em;
+}
 .ali-c{
   align-items: center;
 }
@@ -261,6 +284,9 @@ a{
 }
 .ml-0{
   margin-left: 0;
+}
+.ml-03em{
+  margin-left: 0.3em;
 }
 .ml-05em{
   margin-left: 0.5em;
@@ -314,6 +340,9 @@ a{
 }
 .p-1em{
   padding: 1em;;
+}
+.p-2em{
+  padding: 2em;;
 }
 .pl-05em{
   padding-left: 0.5em;;
@@ -409,6 +438,9 @@ a{
 .fs-15px{
   font-size: 15px;
 }
+.fs-30px{
+  font-size: 30px;
+}
 .fs-50px{
   font-size: 50px;
 }
@@ -438,6 +470,9 @@ a{
 .t-100pc{
   top: 100%;
 }
+.t-0{
+  top: 0;
+}
 .t-15pc{
   top: 15%;
 }
@@ -449,6 +484,12 @@ a{
 }
 .t-03em{
   top: 0.3em;
+}
+.t-05em{
+  top: 0.5em;
+}
+.t-5px{
+  top: 5px;
 }
 .t-30px{
   top: 30px;
@@ -477,6 +518,12 @@ a{
 }
 .r-05em{
   right: 0.5em;
+}
+.r-5px{
+  right: 5px;
+}
+.r-10px{
+  right: 10px;
 }
 .r-30px{
   right: 60px;

@@ -7,6 +7,7 @@ import {
 } from "@letele/svg-icons"
 import avatar from '../imgs/avatar.jpg'
 
+
 export const withLayout = (Component, pageName) => props => {
 
     const {ref, toggle, setToggle} = useToggle()
@@ -18,6 +19,7 @@ export const withLayout = (Component, pageName) => props => {
         {  url:"/repertoire", icon:DesignTools, name:"Repertoire"},
         {  url:"/web_developer", icon:Hand, name:"Web developer"}
     ]
+
 
     return ( 
         <div className='landscape potrait por w-100vw h-100vh'>

@@ -3,6 +3,10 @@
         --footer-w: 450px;
         --footer-b:0.5em;
         --footer-l: calc(0.5 * calc(100vw - var(--footer-w)));
+        --y: calc(90px + var(--footer-b));
+        --page-height:calc(98vh - var(--y));
+        --page-width:calc(var(--page-height) /  1.4142);
+   
     }
 
     .landscape footer{
@@ -12,6 +16,14 @@
     }
 
     .landscape section{
-        height: calc(100% - calc(90px + var(--footer-b)));
+        height: calc(100vh - var(--y));
+    }
+
+    .landscape .page{
+        position: absolute;
+        height: var(--page-height);
+        width: var(--page-width);
+        top: 1vh;
+        left: calc(0.5 * calc(100vw - var(--page-width)));
     }
 }

@@ -1,9 +1,12 @@
-export { notebooksData } from "./notebooksData";
+export { notebooksData } from "./dataAnalysis";
+export { dataAnalystStats } from "./dataAnalysis";
 
-export { dataAnalystStats } from "./dataAnalysistStats";
-export { webDevStats } from "./webDevStats";
+export { schoolData } from "./documents";
+export { workData } from "./documents";
 
-export { webAppsData } from "./webAppsData";
-export { packagesData } from "./packagesData";
-export { templatesData } from "./templatesData";
+export { webDevStats } from "./webApplications";
+export { webAppsData } from "./webApplications";
+export { packagesData } from "./webApplications";
+export { templatesData } from "./webApplications";
 
+export {CoverLetter} from "./jsxFiles"

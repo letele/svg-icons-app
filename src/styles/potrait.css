@@ -1,12 +1,23 @@
 @media (max-width:800px) {
-
+    :root{
+        --y: 90px;
+        --x: 1.5vw;
+    }
+    
     .potrait footer{
         bottom: 0;
         width: 100%;
     }
 
     .potrait section{
-        height: calc(100% - 90px);
+        height: calc(100vh - var(--y));
     }
  
+    .potrait .page{
+        position: absolute;
+        height:calc(98vh - var(--y));
+        width: calc(100vw -  2*var(--x));
+        left: var(--x);
+        top: 1vh;
+    }
 }
