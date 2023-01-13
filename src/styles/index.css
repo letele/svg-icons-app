@@ -65,6 +65,9 @@ a{
 .hov-bgpink:hover{
   background: hotpink;
 }
+.hov-cfff:hover{
+  color: #fff;
+}
 /* Cursor */
 .c-arrow:hover{
   cursor: default;
@@ -83,6 +86,9 @@ a{
 }
 .h-fcnt{
   height: fit-content;
+}
+.h-15px{
+  height: 15px;
 }
 .h-20px{
   height: 20px;
@@ -134,6 +140,9 @@ a{
 }
 .w-fcnt{
   width: fit-content;
+}
+.w-15px{
+  width: 15px;
 }
 .w-20px{
   width: 20px;
