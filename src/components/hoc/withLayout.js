@@ -5,7 +5,7 @@ import {
     AnalyticsChart, Blog, FillingFiles, Hand, 
     DesignTools, Twitter, Github, Linkedin
 } from "@letele/svg-icons"
-import avatar from '../imgs/avatar.jpg'
+import avatar from '../../imgs/avatar.jpg'
 
 
 export const withLayout = (Component, pageName) => props => {

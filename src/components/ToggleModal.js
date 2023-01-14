@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import { UIContext } from "./withUIContext"
+import { UIContext } from "."
 
 export const ToggleModal = ({name, Icon}) => {
 

@@ -13,12 +13,12 @@ export { CommandLine } from "./CommandLine";
 
 
 // Higher Order Components
-export { withModal } from "./withModal";
+export { withModal } from "./hoc";
 
-export { withLayout } from "./withLayout";
+export { withLayout } from "./hoc";
 
-export { withAnimation } from "./withAnimations";
+export { withAnimation } from "./hoc";
 
 // Context
-export { withUIContext,UIContext } from "./withUIContext";
+export { withUIContext,UIContext } from "./hoc";
 

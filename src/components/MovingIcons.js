@@ -3,7 +3,7 @@ import {
     Firebase, Typescript, Jupyter, Excel 
 }  from "@letele/svg-icons"
 
-import { withAnimation } from "./withAnimations";
+import { withAnimation } from ".";
 
 
 export function MovingIcons(){
