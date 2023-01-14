@@ -9,4 +9,3 @@ export { webAppsData } from "./webApplications";
 export { packagesData } from "./webApplications";
 export { templatesData } from "./webApplications";
 
-export {CoverLetter} from "./jsxFiles"

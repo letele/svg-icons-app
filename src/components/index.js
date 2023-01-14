@@ -1,4 +1,8 @@
+
+
 // Components
+export { PageModal } from "./PageModal";
+
 export { ToggleModal } from "./ToggleModal";
 
 export { GraphChart } from "./GraphChart";
@@ -19,6 +23,9 @@ export { withLayout } from "./hoc";
 
 export { withAnimation } from "./hoc";
 
+export { withAccordion } from "./hoc";
+
 // Context
 export { withUIContext,UIContext } from "./hoc";
+
 
