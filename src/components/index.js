@@ -1,5 +1,3 @@
-
-
 // Components
 export { PageModal } from "./PageModal";
 
@@ -14,6 +12,25 @@ export { BarChart } from "./BarChart";
 export { MovingIcons } from "./MovingIcons";
 
 export { CommandLine } from "./CommandLine";
+
+export { Card } from "./Card";
+
+export { BaseTab } from "./BaseTab";
+
+export { Notebooks } from "./dataAnalyst";
+
+export { Applications, Packages, Templates } from "./webDeveloper"
+
+export { DataAnalysis, WebDevelopment } from "./repertoire";
+
+
+
+
+
+
+
+
+
 
 
 // Higher Order Components
