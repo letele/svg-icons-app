@@ -79,7 +79,7 @@ export function GraphChart(){
 
     const Graph = () => {
         return (
-            <div className="grid gr-c15 gr-r15 w-330px h-330px por ml-2em ov-auto">
+            <div className="grid gr-c15 gr-r15 w-330px h-330px por ov-auto">
                 <Center />    
                 <Edges />
                 <Vertices />
@@ -100,20 +100,11 @@ export function GraphChart(){
 
     return (
         <div className="w-fcnt">
-            <h3 className="ml-1em mb-1em txt-c">Web development toools</h3>
-            
-            <div className="flex flex-wrap gap-15em">
+            <h3 className="mb-1em txt-c">Web development tools</h3>
                 <Graph />
-            
-                <article className="ml-2em">
                     {active && <Info iconName={active.name}/>}
-                    <ul className="mt-1em">
-                        <li>Favorate tools: Css3, React, Javascript</li>
-                        <li>Least favorate: Typescript</li>
-                        <li>Most Used: Css3, React, Javascript</li>
-                    </ul>
-                </article>
-            </div>
+            
+           
         </div>
     );
 }

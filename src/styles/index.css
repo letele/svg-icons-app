@@ -45,7 +45,7 @@ a{
   background: #555;
 }
 .bg-lblue{
-  background: #0da7e4;
+  background: #8dc0d4;
 }
 .bg-green{
   background: #41a827;
@@ -56,7 +56,9 @@ a{
 .bg-f5{
   background: #f5f5f5;
 }
-
+.bg-ccc{
+  background: #ccc;
+}
 
 /* hover-background */
 .hov-bg:hover{
@@ -64,6 +66,12 @@ a{
 }
 .hov-bgpink:hover{
   background: hotpink;
+}
+.hov-bgfff:hover{
+  background: #fff;
+}
+.hov-b-ccc:hover{
+  border: 1px solid #ccc;
 }
 .hov-cfff:hover{
   color: #fff;
@@ -442,6 +450,9 @@ a{
 }
 .fs-25em{
   font-size: 2.5em;
+}
+.fs-3em{
+  font-size: 3em;
 }
 
 .fs-15px{
