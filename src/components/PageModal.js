@@ -1,8 +1,18 @@
 import {  useToggle } from '@letele/hook-me-up'
 
-import { ToggleModal, withModal } from "."
+import { withModal } from "."
 
 export const PageModal = ({icons, data}) => {
+
+    const ToggleModal = ({name, Icon}) => {
+
+        return (
+            <li onClick={() => setToggle(name)}>
+                <div className="fs-50px txt-c"><Icon /></div>
+                <div className="txt-c" >{name}</div>
+            </li>
+        )
+    }
 
     const {ref, toggle, setToggle} = useToggle()    
 
@@ -12,7 +22,6 @@ export const PageModal = ({icons, data}) => {
 
     const containerStyles = "bg-black3a poa w-100pc h-100pc t-0"
     
-
     return(
         <section className={sectionStyles}>
             <ul className={ulStyles}>{icons.map(i =>

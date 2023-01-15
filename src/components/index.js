@@ -1,7 +1,8 @@
+
+
+
 // Components
 export { PageModal } from "./PageModal";
-
-export { ToggleModal } from "./ToggleModal";
 
 export { GraphChart } from "./GraphChart";
 
@@ -22,6 +23,10 @@ export { Notebooks } from "./dataAnalyst";
 export { Applications, Packages, Templates } from "./webDeveloper"
 
 export { DataAnalysis, WebDevelopment } from "./repertoire";
+
+export { Dejavu, Spagetti, Winlose } from "./blogs";
+
+export { CoverLetter,School,Work } from "./documents";
 
 
 

@@ -1,7 +1,10 @@
 import { FcFile } from "react-icons/fc";
 
-import { PageModal, withLayout } from "../components"
-import { Dejavu,Spagetti,Winlose  } from "../data/jsxFiles";
+import { 
+    PageModal, withLayout,
+    Dejavu,Spagetti,Winlose
+} from "../components"
+
 
 function Blog(){
 

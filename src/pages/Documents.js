@@ -1,7 +1,10 @@
 import { FcFile, FcList } from "react-icons/fc";
 
-import { PageModal, withLayout } from "../components"
-import { CoverLetter,School,Work} from "../data/jsxFiles";
+import { 
+    PageModal, withLayout ,
+    CoverLetter,School,Work
+} from "../components"
+
 
 function Documents(){
 

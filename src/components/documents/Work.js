@@ -1,5 +1,5 @@
-import { withAccordion } from "../../../components"
-import { workData } from "../../documents"
+import { withAccordion } from ".."
+import { workData } from "../../data"
 
 export const Work = () => {
     
