@@ -1,7 +1,7 @@
+import { useEffect, useState } from "react"
 import {
     Matplotlib, Excel,Numpy, Pandas, PostgreSql, Pytorch,R
 } from "@letele/svg-icons"
-import { useState } from "react"
 
 import {dataAnalystStats} from "../data"
 
@@ -9,17 +9,49 @@ export function BarChart(){
 
     const [active, setActive]= useState(null)
 
+    
+    const ActiveBar = ({i}) =>{
+        const [rate, setRate]= useState(1)
+        useEffect(()=>{
+            let intervalId,end
+            
+            intervalId = setInterval(()=>{
+                setRate(prev => {
+                    end  = prev + 1
+                    return end
+                })
+                end===i.rate*100
+                && clearInterval(intervalId)
+                
+            },20)
+            
+            return () => clearInterval(intervalId)
+        },[])
+
+        const perc = (rate-1)/(i.rate*100)
+
+        return (
+            <div 
+                className="poa w-100pc"
+                style={{
+                    background: i.color,
+                    height: `calc(${perc} * 100%)`,
+                }}
+            ></div>
+        )
+    }
+    
     const icons = {Matplotlib, Excel,Numpy, Pandas, PostgreSql, Pytorch,R}
     
-    
     const Bars = () => {
-        
+
         const getHeight = rate => `calc(${rate} * calc(210px - 0.5em))`
-        
-        const setBackground = (i) => active &&
-        active.name === i.name? i.color : "#8dc0d4"
 
         const u1Styles = "poa w-100pc h-100pc flex jus-even trotX-180"
+
+        const liStyles = `
+            por w-10pc trotX-180 bg-8dc flex ali-e jus-c
+        `
         
         const spanStyles = `
             poa b--35px bg-ccc br-50pc flex ali-c jus-c 
@@ -33,20 +65,19 @@ export function BarChart(){
                     return (
                         <li 
                             key={i.name}
-                            className="por w-10pc trotX-180 "
-                            style={{height:getHeight(i.rate), 
-                                background:setBackground(i)
-                            }}
+                            className={liStyles}
+                            style={{height:getHeight(i.rate)}}
                         >
                             <span 
                                 style={{left:"calc(0.5 * calc(100% - 30px))"}}
                                 className={spanStyles}
-                                onClick={() => setActive(
-                                    active?i.name===active.name?null:i:i
-                                )}
+                                onClick={() => setActive(active?i.name===active.name?null:i:i)}
                             >
                                 <Icon />
                             </span> 
+                            {active && active.name===i.name && 
+                               <ActiveBar i={i}/>
+                            }
                         </li>
                     )
                 })

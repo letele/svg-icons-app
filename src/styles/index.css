@@ -59,6 +59,9 @@ a{
 .bg-ccc{
   background: #ccc;
 }
+.bg-8dc{
+  background: #8dc0d4;
+}
 
 /* hover-background */
 .hov-bg:hover{
@@ -91,6 +94,9 @@ a{
 }
 .h-70pc{
   height: 70%;
+}
+.h-80pc{
+  height: 80%;
 }
 .h-fcnt{
   height: fit-content;
@@ -142,6 +148,9 @@ a{
 }
 .w-70pc{
   width: 70%;
+}
+.w-80pc{
+  width: 80%;
 }
 .w-10pc{
   width: 10%;
@@ -267,6 +276,9 @@ a{
 }
 .ali-c{
   align-items: center;
+}
+.ali-e{
+  align-items: flex-end;
 }
 .jus-c{
   justify-content: center;
@@ -448,6 +460,9 @@ a{
 .fs-18em{
   font-size: 1.8em;
 }
+.fs-2em{
+  font-size: 2em;
+}
 .fs-25em{
   font-size: 2.5em;
 }
@@ -492,6 +507,9 @@ a{
 }
 .t-0{
   top: 0;
+}
+.t-10pc{
+  top: 10%;
 }
 .t-15pc{
   top: 15%;
@@ -567,6 +585,9 @@ a{
 .l-100pc{
   left: 100%;
 }
+.l-10pc{
+  left: 10%;
+}
 .l-15pc{
   left: 15%;
 }
@@ -617,8 +638,14 @@ a{
 .trot-90{
   transform: rotate(-90deg);
 }
+.trot-180{
+  transform: rotate(-180deg);
+}
 .trotX-180{
   transform: rotateX(180deg);
+}
+.trotY-180{
+  transform: rotateY(180deg);
 }
 .torigin-tl{
   transform-origin: top left;

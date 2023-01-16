@@ -1,7 +1,7 @@
 import { useState } from "react"
 import {
-    Hand,Html5,Css3,Javascript,Firebase,React,
-    Next,Typescript,Flask, Puppeteer
+    Html5,Css3,Javascript,Firebase,React,
+    Next,Typescript,Flask, Puppeteer,Hand
 } from "@letele/svg-icons"
 
 import {webDevStats} from "../data"
@@ -12,7 +12,7 @@ export function GraphChart(){
 
     const icons = {
         Html5,Css3,Javascript,Firebase,React,
-        Next,Typescript,Flask, Puppeteer
+        Next,Typescript,Flask, Puppeteer,Hand
     }
 
     const pos = [
@@ -21,27 +21,30 @@ export function GraphChart(){
         [4,1,50,240],
     ]
 
-
     const progress = ratio => `conic-gradient(
         #0da7e4 ${ratio*360}deg, #ccc 0deg
     )`
-
     
     const Edges = () => {
+        const divStyles="poa c-arrow t-15pc l-15pc h-70pc w-70pc bg-white br-50pc flex ali-c jus-c" 
         return (
             webDevStats.map((i,j) => {
                 const gridColumn = `${pos[j][0]}/${pos[j][0]+2}`
                 const gridRow = `${pos[j][1]}/${pos[j][1]+2}`
+                const index = Object.keys(icons).indexOf(i.name)
                 const Icon = icons[i.name]
+
                 return (
                     <div 
                         key={`no${j}`}
                         style={{background:progress(i.rate),gridColumn, gridRow}}
                         className="br-50pc fs-11em por"
-                        onClick={() => setActive(i)}
+                        onClick={() => setActive(
+                            active?i.name===active.name?null:{...i,index}:{...i,index}
+                        )}
                     >
-                        <div className="poa t-15pc l-15pc h-70pc w-70pc bg-white br-50pc flex ali-c jus-c">
-                            <Icon />
+                        <div className={divStyles}>
+                            {active?i.name===active.name?active.rate*100: <Icon />: <Icon />}
                         </div>
                     </div>
                 )
@@ -50,13 +53,23 @@ export function GraphChart(){
     }
     
     const Vertices = () => {
+
+        const isActive = i=>  pos[active.index][3]===i[3] 
+
+        const top =(i) => `1px solid ${active ?isActive(i) ? 
+            "#6bbcff":"#555":"#555"
+        }`
+
+        const divStyles = `line poa l-50pc t-50pc z--1 torigin-tl`
+
         return(
             pos.map((i,j)=>{
                 return(
                     <div 
                         key={j}
-                        className={`line poa l-50pc t-50pc z--1 bt-blue torigin-tl`}
+                        className={divStyles}
                         style={{
+                            borderTop:top(i),
                             width:`${i[2]}%`,
                             transform:`rotate(${i[3]}deg)`
                         }}
@@ -67,12 +80,13 @@ export function GraphChart(){
     }
 
     const Center = () => {
+        const Icon = icons[active?active.name:"Hand"]
         return (
             <div 
-                className="bg-green br-50pc flex ali-c jus-c fs-25em"
+                className="bg-green br-50pc flex ali-c jus-c fs-2em"
                 style={{gridColumn:"7/10",gridRow:"7/10"}}
             >
-                <Hand />
+                <Icon />
             </div>
         )
     }
@@ -92,8 +106,7 @@ export function GraphChart(){
         return (
             <div>
                 <p><Icon /> {active.name}</p>
-                <p>rating: {active.rate*100}%</p>
-                <p> Nota Bene: % only indicates the confidence level of using the tool.</p>
+                <p>Confidence level: {active.rate*100}%</p>
             </div>
         )
     }
@@ -102,9 +115,7 @@ export function GraphChart(){
         <div className="w-fcnt">
             <h3 className="mb-1em txt-c">Web development tools</h3>
                 <Graph />
-                    {active && <Info iconName={active.name}/>}
-            
-           
+                {active && <Info iconName={active.name}/>}
         </div>
     );
 }
