@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@letele/ecmascripts": "^0.1.1",
-    "@letele/hook-me-up": "^0.1.2",
+    "@letele/hook-me-up": "^0.1.3",
     "@letele/svg-icons": "^0.1.1",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",

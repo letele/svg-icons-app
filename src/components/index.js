@@ -28,6 +28,7 @@ export { Dejavu, Spagetti, Winlose } from "./blogs";
 
 export { CoverLetter,School,Work } from "./documents";
 
+export {About,Help,Hobbies,Location,Ls} from "./landing";
 
 
 

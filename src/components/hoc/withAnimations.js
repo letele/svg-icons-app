@@ -7,14 +7,14 @@ export const withAnimation = (Icon,x,y,time) => props => {
     const [opacity, setOpacity] = useState(0);
 
     useEffect(() => {
-        const timeout = setTimeout(() => setOpacity(1), 1200 + time)
+        const timeout = setTimeout(() => setOpacity(1), 600 + time)
 
         return () => clearTimeout(timeout)
     },[])
 
     setTimeout(() => setShow(true), time)
 
-    const [xClass,yClass,size] = [x[0],y[0],"30px"]
+    const [xClass,yClass,size] = [x[0],y[0],"18px"]
     
     return (show &&
         <>
