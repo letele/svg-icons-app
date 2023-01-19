@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600&display=swap');
+
 html,
 body,
 * {
@@ -46,12 +48,22 @@ a{
   background: #00000093;
 }
 .bg-dgray{
-  background: #55555571;
+  background: #00000099;
 }
 .bg-555{
   background: #555;
 }
-.bg-lblue{
+.bg-555{
+  background: #555;
+}
+.bg-3b4452{
+  background: #3b4452;
+}
+.bg-3b4452a6{
+  background: #3b4452a6;
+}
+
+.bg-8dc0d4{
   background: #8dc0d4;
 }
 .bg-green{
@@ -65,6 +77,9 @@ a{
 }
 .bg-ccc{
   background: #ccc;
+}
+.bg-cccccc54{
+  background: #cccccc54;
 }
 .bg-8dc{
   background: #8dc0d4;
@@ -236,19 +251,22 @@ a{
 }
 
 /* Borders */
-.b-none{
+.bd-none{
   border: none;
 }
-.b-black{
+.bd-000{
   border: 1px solid #000;
 }
-.b-af{
-  border: 1px solid #afafaf;
+.bd-0001{
+  border: 1px solid #ccc;
 }
-.bb-black{
+.bb-none{
+  border-bottom: none;
+}
+.bb-000{
   border-bottom: 1px solid #000;
 }
-.bl-black{
+.bl-000{
   border-left: 1px solid #000;
 }
 
@@ -277,6 +295,9 @@ a{
 /* Grid */
 .grid{
   display: grid;
+}
+.gr-c4{
+  grid-template-columns: repeat(4,1fr);
 }
 .gr-c15{
   grid-template-columns: repeat(15,1fr);
@@ -423,6 +444,9 @@ a{
 .pr-05em{
   padding-right: 0.5em;
 }
+.pt-03em{
+  padding-top: 0.3em;
+}
 .pt-05em{
   padding-top: 0.5em;
 }
@@ -444,11 +468,11 @@ a{
 }
 
 
-
 /* Font-family */
-.arial{
-  font-family: Arial, Helvetica, sans-serif;
+.nunitosans{
+  font-family: 'Nunito Sans',Helvetica, sans-serif;
 }
+
 .lucida{
   font-family: "Lucida Console",monospace;
 }
@@ -459,6 +483,9 @@ a{
 }
 .c-000{
   color: #000;
+}
+.c-faf8f8{
+  color: #faf8f8;
 }
 .c-white{
   color: white;
@@ -508,6 +535,9 @@ a{
   font-size: 3em;
 }
 
+.fs-12px{
+  font-size: 12px;
+}
 .fs-15px{
   font-size: 15px;
 }
@@ -527,6 +557,12 @@ a{
 }
 .fw-normal{
   font-weight: normal;
+}
+.fw-200{
+  font-weight: 200;
+}
+.fw-600{
+  font-weight: 600;
 }
 
 /* Text-transforms */
@@ -622,12 +658,16 @@ a{
 .b-05em{
   bottom: 0.5em;
 }
+.b--10px{
+  bottom: -10px;
+}
 .b--35px{
   bottom: -35px;
 }
 .b-30px{
   bottom: 30px;
 }
+
 
 /* Left */
 .l-100pc{
@@ -705,9 +745,26 @@ a{
   transform-origin: top left;
 }
 
+.linear-05s{
+  transition: all 0.5s linear;
+}
 
+.slide1 { 
+  animation: slide1 0.2s ease-in forwards;
+}
+.slide2 { 
+  animation: slide2 0.4s ease-out forwards; 
+}
 
+@keyframes slide1{
+  from { bottom: 50%;}
+  to { bottom: 98%; }
+}
 
+@keyframes slide2{
+  from {transform: translateY(25px);}
+  to {transform: translateY(0);}
+}
 
 
 

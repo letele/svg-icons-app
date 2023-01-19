@@ -26,6 +26,7 @@ export function BarChart(){
             },20)
             
             return () => clearInterval(intervalId)
+        // eslint-disable-next-line
         },[])
 
         const perc = (rate-1)/(i.rate*100)

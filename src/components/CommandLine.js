@@ -25,7 +25,7 @@ export function CommandLine(){
 
         const redirect =(route) => {
             setCmds([...cmds, { ...update, comp:commands[value].comp} ]) 
-            setTimeout(() => navigate(route), 1000)
+            setTimeout(() => navigate(route,{state:'landing'}), 1000)
         }
 
         const Error = () => <p className="maxw-595px">{error(value)}</p>
@@ -64,7 +64,7 @@ export function CommandLine(){
 
     const formStyles = "por flex h-20px"
 
-    const inputStyles = "w-100pc pl-2em bg-none b-none out-none c-fff fs-11pt  lsp-02em"
+    const inputStyles = "w-100pc pl-2em bg-none bd-none out-none c-fff fs-11pt  lsp-02em"
 
     const sectionStyles =`w-100pc ovy-auto ovx-hide p-05em`
 

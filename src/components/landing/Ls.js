@@ -1,23 +1,24 @@
 import { Link } from 'react-router-dom'
 
 export const Ls = () => {
+    const state="landing"
+
+    const pagelinks = [
+        {  url:"/blog", state, name:"Blog"},
+        {  url:"/data_analyst", state, name:"Data analyst"},
+        {  url:"/documents", state, name:"Documents"},
+        {  url:"/repertoire", state, name:"Repertoire"},
+        {  url:"/web_developer", state, name:"Web developer"}
+    ]
     return(
-        <nav>
-            <li className='mb-05em c-6bbcff'>
-                <Link to="/blog" >Blog</Link>
-            </li>
-            <li className='mb-05em c-6bbcff'>
-                <Link to="/data_analyst">Data analyst</Link>
-            </li>
-            <li className='mb-05em c-6bbcff'>
-                <Link to="/documents" >Documents</Link>
-            </li>
-            <li className='mb-05em c-6bbcff'>
-                <Link to="/repertoire">Repertoire</Link>
-            </li>
-            <li className='mb-05em c-6bbcff'>
-                <Link to="/web_developer" >Web developer</Link>
-            </li>
+        <nav>{pagelinks.map(i =>{
+
+            return (
+                <li key={i.name} className='mb-05em c-6bbcff' >
+                    <Link to={i.url} state={i.state}>{i.name}</Link>
+                </li>
+            )
+        })}
         </nav>
     )
 }

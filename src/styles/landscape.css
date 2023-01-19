@@ -14,9 +14,14 @@
         left:var(--footer-l);
         width: var(--footer-w);
     }
+    
 
     .landscape section{
         height: calc(100vh - var(--y));
+    }
+
+    .landscape .glass{
+        backdrop-filter: blur(5px);
     }
 
     .landscape .page{
