@@ -1,37 +1,45 @@
-export const Card = ({data}) => {
+import { useEffect, useState } from "react";
+import { VscChromeClose,VscVmRunning,VscGithubInverted  } from "react-icons/vsc";
 
-    const externalLinks = (links) => {
-        
-        const ulStyles = "fs-9pt flex jus-e gap-15em p-05em poa r-05em b-05em"
-        
-        const liStyles = "p-02-05em b-black mw-80px txt-c"
+export const Card = ({data,Icon,callBack}) => {
 
-        return (
-            <ul className={ulStyles}>{links.map((i,j) => 
-                <li key={j} className={liStyles}>
-                    <a rel="noopener noreferrer" href={i.href} target="_blank">
-                    {i.type==="Repo" ? "View Repo": (
-                        i.type==="App" ? "View App" : "View Package") 
-                    }
-                    </a>
-                </li>)}
-            </ul>
-        )
-    }
-        
-    const liStyles = "b-black float-l m-05em  w-330px h-210px p-02-05em por"
+    const [opacity, setOpacity] = useState(0)
 
-    const h3Styles = "fw-normal mb-03em mt-03em"
-    
-    const pStyles = "fs-9pt mb-05em ml-05em"
+    useEffect(() => setOpacity(1),[])
+
+    const div1Styles = "bd-afaeae h-100pc w-330px br-5px ov-hidden linear-05s"
+
+    const ulStyles = "flex ali-c gap-15em h-100pc mr-03em mt-03em"
+
     return (
-        <li key={data.name} className={liStyles}>
-            <h3 className={h3Styles}>{data.name}</h3>
-            {data.description.map((i,j) => 
-                <p className={pStyles} key={`.${j}`}>{i}</p>)
-            }
+        <div className= {div1Styles} style={{opacity}}>
+            <div className="flex jus-btwn bg-cccccc54 fs-12px">
+                <p className="flex ali-c gap-05em ml-03em">
+                    <Icon />
+                    {data.name}
+                </p>
 
-            {externalLinks(data.links)}
-        </li>
+                <ul className={ulStyles}>{ data.links.map(link => 
+                    <li key={link.type}>
+                        <a rel="noopener noreferrer" 
+                            href={link.href} 
+                            target="_blank"
+                        >{link.type==='App' ? 
+                            <VscVmRunning />: <VscGithubInverted />
+                        }</a>
+                    </li>)}
+
+                    <li onClick={callBack}>
+                        <VscChromeClose />
+                    </li>
+                </ul>
+            </div>
+            
+            <div className="p-05em fs-10pt">
+                {data.description.map((i,j) => 
+                    <p className="mb-03em"  key={`.${j}`}>{i}</p>)
+                }
+            </div>
+        </div>
     )
 }

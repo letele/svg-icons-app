@@ -127,9 +127,9 @@ export const withLayout = (Component, pageName) => props => {
                 <div className='lsp-05em linear-05s' style={{opacity}}>{pageName}</div>
             </header>
 
-            <div style={{opacity}} className="linear-05s">
+            <section style={{opacity}} className="linear-05s">
                 <Component {...props} />            
-            </div>
+            </section>
            
             
             <footer 

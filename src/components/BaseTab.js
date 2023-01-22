@@ -18,7 +18,7 @@ export const BaseTab = ({tabs}) => {
     const articleStyles = "flex flex-wrap w-100pc ov-auto"
 
     return (
-        <section className={sectionStyles}>
+        <div className={sectionStyles}>
             
             <nav className={navStyles}>{tabs.map(tab => 
                 <li 
@@ -38,6 +38,6 @@ export const BaseTab = ({tabs}) => {
                 ><tab.component /></article>
             ))}
 
-        </section>
+        </div>
     )
 }

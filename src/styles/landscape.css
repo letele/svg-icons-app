@@ -9,14 +9,14 @@
    
     }
 
-    .landscape footer{
+    .landscape > footer{
         bottom: var(--footer-b);
         left:var(--footer-l);
         width: var(--footer-w);
     }
     
 
-    .landscape section{
+    .landscape > section{
         height: calc(100vh - var(--y));
     }
 

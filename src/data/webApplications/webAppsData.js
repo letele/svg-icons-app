@@ -2,7 +2,7 @@ export const webAppsData = [
     {
         name: "cfop-algorithms",
         description: [
-            "A collection of Rubik's cube algorithms (F2L, OLL, and PLL).",
+            "A collection of Rubik's cube algorithms.",
             "All drawings were styled with CSS3",
             "The application was developed with Next.js",
             "The application is deployed on Vercel."

@@ -23,7 +23,7 @@ export const PageModal = ({icons, data}) => {
     const containerStyles = "bg-black3a poa w-100pc h-100pc t-0"
     
     return(
-        <section className={sectionStyles}>
+        <div className={sectionStyles}>
             <ul className={ulStyles}>{icons.map(i =>
                 <ToggleModal key={i.name} name={i.name} Icon={i.icon} />
             )}</ul>
@@ -33,6 +33,6 @@ export const PageModal = ({icons, data}) => {
                 {withModal(Comp,name , {setToggle,ref})}
             </div>)}
 
-        </section>
+        </div>
     )
 } 
