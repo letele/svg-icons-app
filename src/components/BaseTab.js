@@ -9,13 +9,13 @@ export const BaseTab = ({tabs}) => {
     const activeTxt = (name) => active(name)
     ? 'c-16a3e4 txt-shdw-acacac':'c-acacac'
     
-    const sectionStyles = "poa w-100pc t-60px  pl-2em ov-hidden"
+    const sectionStyles = "w-100pc h-100pc pl-2em"
 
     const navStyles = `
         flex ali-c gap-1em h-30px w-fcnt nunitosans lsp-05em fw-bold 
     `
     
-    const articleStyles = "flex flex-wrap w-100pc ov-auto"
+    const articleStyles = "flex flex-wrap w-100pc ovy-auto"
 
     return (
         <div className={sectionStyles}>

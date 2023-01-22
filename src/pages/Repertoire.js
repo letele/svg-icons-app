@@ -1,5 +1,6 @@
-
-import { DataAnalysis,WebDevelopment,withLayout, BaseTab } from "../components"
+import { 
+    DataAnalysis,WebDevelopment,withLayout, BaseTab 
+} from "../components"
 
 function Repertoire(){
     

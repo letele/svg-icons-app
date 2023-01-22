@@ -104,13 +104,18 @@ export const withLayout = (Component, pageName) => props => {
         )
     }
 
-    const div1Styles = 'landscape potrait por w-100vw h-100vh'
+    const div1Styles = 'landscape potrait por w-100vw h-100vh '
 
-    const headerStyles = 'p-03em pl-1em flex ali-c h-60px nunitosans fs-15px lsp-05em fw-600'
+    const headerStyles = `
+        poa t-0 h-60px w-100pc p-03em pl-1em flex ali-c 
+        nunitosans fs-15px lsp-05em fw-600
+    `
+
+    const sectionStyles = "poa w-100pc t-60px linear-05s"
 
     const imgStyles = 'w-50px h-50px br-50pc mr-05em linear-05s'
 
-    const footerStyles = 'fc-white poa h-30px linear-05s nunitosans'
+    const footerStyles = 'poa h-30px linear-05s nunitosans'
 
     return ( 
         <div className={div1Styles}>
@@ -127,7 +132,7 @@ export const withLayout = (Component, pageName) => props => {
                 <div className='lsp-05em linear-05s' style={{opacity}}>{pageName}</div>
             </header>
 
-            <section style={{opacity}} className="linear-05s">
+            <section style={{opacity}} className={sectionStyles}>
                 <Component {...props} />            
             </section>
            

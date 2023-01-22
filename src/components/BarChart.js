@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import {  useState } from "react"
 import {
     Matplotlib, Excel,Numpy, Pandas, PostgreSql, Pytorch,R
 } from "@letele/svg-icons"
@@ -8,39 +8,6 @@ import {dataAnalystStats} from "../data"
 export function BarChart(){
 
     const [active, setActive]= useState(null)
-
-    
-    const ActiveBar = ({i}) =>{
-        const [rate, setRate]= useState(1)
-        useEffect(()=>{
-            let intervalId,end
-            
-            intervalId = setInterval(()=>{
-                setRate(prev => {
-                    end  = prev + 1
-                    return end
-                })
-                end===i.rate*100
-                && clearInterval(intervalId)
-                
-            },20)
-            
-            return () => clearInterval(intervalId)
-        // eslint-disable-next-line
-        },[])
-
-        const perc = (rate-1)/(i.rate*100)
-
-        return (
-            <div 
-                className="poa w-100pc"
-                style={{
-                    background: i.color,
-                    height: `calc(${perc} * 100%)`,
-                }}
-            ></div>
-        )
-    }
     
     const icons = {Matplotlib, Excel,Numpy, Pandas, PostgreSql, Pytorch,R}
     
@@ -48,10 +15,10 @@ export function BarChart(){
 
         const getHeight = rate => `calc(${rate} * calc(210px - 0.5em))`
 
-        const u1Styles = "poa w-100pc h-100pc flex jus-even trotX-180"
+        const u1Styles = "poa w-100pc h-100pc flex jus-even rotX-180"
 
         const liStyles = `
-            por w-10pc trotX-180 bg-8dc flex ali-e jus-c
+            por w-10pc rotX-180 bg-8dc flex ali-e jus-c
         `
         
         const spanStyles = `
@@ -69,6 +36,16 @@ export function BarChart(){
                             className={liStyles}
                             style={{height:getHeight(i.rate)}}
                         >
+                        
+
+                            {active && active.name===i.name && <div 
+                                className="poa w-100pc h-100pc fill"
+                                style={{
+                                    background: i.color,
+                                    animation:`fill ${i.rate*1000}ms linear forwards`
+                                }}
+                            ></div>}
+                            
                             <span 
                                 style={{left:"calc(0.5 * calc(100% - 30px))"}}
                                 className={spanStyles}
@@ -76,9 +53,6 @@ export function BarChart(){
                             >
                                 <Icon />
                             </span> 
-                            {active && active.name===i.name && 
-                               <ActiveBar i={i}/>
-                            }
                         </li>
                     )
                 })
@@ -88,13 +62,13 @@ export function BarChart(){
     
     const Chart = () => {
 
-        const ulStyles = "w-420px h-210px por grid bb-black bl-black pt-05em ml-auto"
+        const ulStyles = "w-420px h-210px por grid bb-555 bl-555 pt-05em ml-auto"
 
         return (
-            <article className="h-300px w-450px ml-2em por">
+            <article className="h-300px w-450px ml-2em por nunitosans">
                 <h3 className="txt-c mb-05em">Data analysis tools</h3>
-                <span className="poa trot-90 t-100px l--08em">Ranking</span>
-                <span className="poa b-0 l-50pc">Tools</span>
+                <span className="poa trot-90 t-100px l--18em lsp-05em">Confidence</span>
+                <span className="poa b--10px l-50pc lsp-05em">Tools</span>
                 <ul className={ulStyles}>
                     {[5,4,3,2,1].map(i => <li key={i} className="por btdash-lgray">
                         <span className="poa l--08em t--06em">{i}</span>
@@ -108,7 +82,7 @@ export function BarChart(){
     const Info = ({iconName}) => {
         const Icon = icons[iconName]
         return (
-            <ul className="ml-2em">
+            <ul className="ml-2em nunitosans">
                 <li className="mb-03em"><Icon className="fs-25em mr-03em"/>{iconName}</li>
                 <li>Confidence level: {Math.round(active.rate*100)}%</li>
             </ul>

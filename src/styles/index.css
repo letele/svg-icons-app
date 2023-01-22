@@ -67,8 +67,8 @@ a{
 .bg-8dc0d4{
   background: #8dc0d4;
 }
-.bg-green{
-  background: #41a827;
+.bg-61cfa1{
+  background: #61cfa1;
 }
 .bg-lgreen{
   background: #9bc777;
@@ -318,11 +318,11 @@ a{
 .bb-none{
   border-bottom: none;
 }
-.bb-000{
-  border-bottom: 1px solid #000;
+.bb-555{
+  border-bottom: 1px solid #555;
 }
-.bl-000{
-  border-left: 1px solid #000;
+.bl-555{
+  border-left: 1px solid #555;
 }
 
 .btdash-lgray{
@@ -798,8 +798,8 @@ a{
 .l--08em{
   left: -0.8em;
 }
-.l--1em{
-  left: -1em;
+.l--18em{
+  left: -1.8em;
 }
 .l-0{
   left: 0;
@@ -857,7 +857,7 @@ a{
 .trot-180{
   transform: rotate(-180deg);
 }
-.trotX-180{
+.rotX-180{
   transform: rotateX(180deg);
 }
 .trotY-180{
@@ -873,6 +873,9 @@ a{
 .linear-05s{
   transition: all 0.5s linear;
 }
+
+
+
 
 .float{
   animation: float 3s ease-in-out infinite;
@@ -908,7 +911,10 @@ a{
   100%{transform: translateY(0);}
 }
 
-
+@keyframes fill{
+  from{height: 0;}
+  top{height: 100%;}
+}
 
 
 

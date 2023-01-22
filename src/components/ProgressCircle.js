@@ -72,7 +72,7 @@ export function ProgressCircle(){
     const divStyles = "w-100pc flex flex-wrap gap-15em pl-1em"
 
     return(
-        <div>
+        <div className="nunitosans">
             <h3 className="mb-1em txt-c">Data analysis tools</h3>
             
             <div className={divStyles}>{
