@@ -16,7 +16,7 @@ function Blog(){
         {name:"win lose",icon:FcFile},
     ]
 
-    return <PageModal icons={Icons} data={Blogs} />
+    return <PageModal icons={Icons} components={Blogs} />
 }
 
 export default withLayout(Blog,"Blog")

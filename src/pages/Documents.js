@@ -1,14 +1,14 @@
 import { FcFile, FcList } from "react-icons/fc";
 
 import { 
-    PageModal, withLayout ,
+    PageModal, withLayout,
     CoverLetter,School,Work
 } from "../components"
 
 
 function Documents(){
 
-    const Docs = {"School":School,"Work":Work,"Cover Letter":CoverLetter}
+    const Docs = {School,Work,"Cover Letter":CoverLetter}
 
     const Icons = [
         {name:"School",icon:FcList},
@@ -16,7 +16,7 @@ function Documents(){
         {name:"Cover Letter",icon:FcFile},
     ]
 
-    return <PageModal icons={Icons} data={Docs} />
+    return <PageModal icons={Icons} components={Docs} />
 }
 
 export default withLayout(Documents,"Documents")

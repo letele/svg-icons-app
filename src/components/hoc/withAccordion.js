@@ -4,28 +4,31 @@ import { VscDiffAdded,VscDiffRemoved } from "react-icons/vsc";
 
 export  const withAccordion = (Component, data, key) =>()=> {
     
-    const [modal, setModal] = useState(null)
+    const [accordion, setAccordion] = useState(null)
 
-    const handleModal = val => modal===val ?
-    setModal(false) :setModal(val)
+    const handleAccordion = val => accordion===val ?
+    setAccordion(false) :setAccordion(val)
 
 
-    const Icon = ({val}) => modal===val ?
+    const Icon = ({val}) => accordion===val ?
     <VscDiffRemoved /> : <VscDiffAdded />
 
     return (
         data.map(i => 
-            <div key={i[key]}>
+            <div key={i[key]} >
                 <li 
                     className="mb-03em"
-                    onClick={() => handleModal(i[key])}
+                    onClick={() => handleAccordion(i[key])}
                 >
-                    <span className="flex">
+                    <span className="flex ali-c">
                         <Icon val={i[key]}/>
                         <span className="ml-03em">{i[key]}</span>
                     </span>
                 </li> 
-                {modal===i[key] &&  <Component i={i} />}
+                {accordion===i[key] &&  
+                <div>
+                    <Component i={i}/>
+                </div>}
             </div>
         )
     )

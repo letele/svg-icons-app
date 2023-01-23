@@ -8,7 +8,7 @@ export const Work = () => {
         <li className="mb-03em"><strong>Title :</strong> {i.title}</li>
         <li className="mb-03em"><strong>Description :</strong> <p>{i.description}</p></li>
         <li className="mb-03em"><strong>Period :</strong> {i.period.map(j =>
-            <span key={j}>{j}</span>
+            <span key={j} className="mr-05em" >{j}</span>
         )}</li>
     </ul>
 

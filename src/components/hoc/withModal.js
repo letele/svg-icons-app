@@ -1,13 +1,13 @@
 import { VscClose } from "react-icons/vsc";
 
-export const withModal = (Component, name,state) => {
+export const withModal = (Component, state) => {
     
     const {ref, setToggle} =state
     
-    const modalStyles = "bg-white page m-0-auto"
+    const modalStyles = "bg-fff page m-0-auto nunitosans"
 
     const spanClasses = `
-        c-arrow hov-cfff hov-bgpink poa r-10px t-5px 
+        c-arrow hov-cfff hov-bgpink poa r-10px t-10px 
         flex ali-c jus-c h-15px w-15px 
     `
     

@@ -708,6 +708,9 @@ a{
 .t-5px{
   top: 5px;
 }
+.t-10px{
+  top: 10px;
+}
 .t-27px{
   top: 27px;
 }
@@ -798,6 +801,9 @@ a{
 .l--08em{
   left: -0.8em;
 }
+.l--1em{
+  left: -1em;
+}
 .l--18em{
   left: -1.8em;
 }
@@ -863,24 +869,23 @@ a{
 .trotY-180{
   transform: rotateY(180deg);
 }
-.torigin-tl{
-  transform-origin: top left;
-}
 .transy-100pc{
   transform: translateY(100%);
 }
+
+.torigin-tl{
+  transform-origin: top left;
+}
+
 
 .linear-05s{
   transition: all 0.5s linear;
 }
 
 
-
-
 .float{
   animation: float 3s ease-in-out infinite;
 }
-
 .slide1 { 
   animation: slide1 0.2s ease-in forwards;
 }
@@ -901,6 +906,7 @@ a{
   from {transform: translateY(25px);}
   to {transform: translateY(0);}
 }
+
 @keyframes spin{
   to{transform: rotate(360deg);}
 }
@@ -910,6 +916,7 @@ a{
   50%{transform: translateY(-0.1em);}
   100%{transform: translateY(0);}
 }
+
 
 @keyframes fill{
   from{height: 0;}
