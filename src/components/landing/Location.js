@@ -1,7 +1,7 @@
 export const Location = () => {
     return (
         <p>
-            I currently reside at Hanelese, Maseru, Lesotho.
+            &#127757;&#128204;Hanelese, Maseru, Lesotho.
         </p>
     )
 }

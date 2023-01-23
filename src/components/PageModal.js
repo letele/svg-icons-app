@@ -11,7 +11,7 @@ export const PageModal = ({icons, components}) => {
 
     useEffect(()=> setOpacity(toggle?1:0),[toggle])
 
-    const sectionStyles = "landscape potrait poa w-100pc h-100pc ov-hidden"
+    const sectionStyles = "landscape potrait poa w-100pc h-100pc nunitosans ov-hidden"
 
     const ulStyles = "flex flex-wrap gap-2em m-1em ml-2em c-arrow"
 
@@ -23,7 +23,7 @@ export const PageModal = ({icons, components}) => {
             <ul className={ulStyles}>{icons.map(i =>
                 <li key={i.name} onClick={() => setToggle(i.name)}>
                     <div className="fs-50px txt-c"><i.icon /></div>
-                    <div className="txt-c" >{i.name}</div>
+                    <div className="txt-c mt--1em" >{i.name}</div>
                 </li>
             )}</ul>
             

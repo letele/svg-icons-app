@@ -1,4 +1,4 @@
-import { useEffect,useState } from "react"
+import { useState } from "react"
 import {
     Html5,Css3,Javascript,Firebase,React,
     Next,Typescript,Flask, Puppeteer,Hand
@@ -9,28 +9,9 @@ import {webDevStats} from "../data"
 export function GraphChart(){
 
     const [active, setActive]= useState(null)
-    const [rate, setRate]= useState(1)
-
-    useEffect(()=>{
-        let intervalId, end
-        if(active){
-            intervalId = setInterval(()=>{
-                setRate(prev => {
-                    end  = prev + 1
-                    return end
-                })
-                end+1===active.rate*100
-                && clearInterval(intervalId)
-                
-            },20)
-        }
-
-        return () => clearInterval(intervalId)
-    },[active])
 
     const handleActive = (i) => {
         const index = Object.keys(icons).indexOf(i.name)
-        setRate(0)
         setActive(
             active?i.name===active.name?null:{...i,index}:{...i,index}
         )
@@ -47,8 +28,8 @@ export function GraphChart(){
         [4,1,50,240],
     ]
 
-    const activeConic = () => `conic-gradient(
-        #61cfa1 ${(rate/100)*360}deg, #ccc 0deg
+    const activeConic = (rate) => `conic-gradient(
+        #61cfa1 ${rate*360}deg, #ccc 0deg
     )`
     
     const defaultConic = (i) => `conic-gradient(
@@ -56,7 +37,7 @@ export function GraphChart(){
     )`
 
     const setConic = (i) => active && active.name===i.name ?
-    activeConic():defaultConic(i)
+    activeConic(i.rate):defaultConic(i)
 
     
     const Edges = () => {
@@ -78,7 +59,7 @@ export function GraphChart(){
                         onClick={() => handleActive(i)}
                     >
                         <div className={divStyles}>
-                            {active?i.name===active.name?rate: <Icon />: <Icon />}
+                            {active?i.name===active.name?i.rate*100: <Icon />: <Icon />}
                         </div>
                     </div>
                     

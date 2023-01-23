@@ -479,6 +479,9 @@ a{
 .mt-1em{
   margin-top: 1em;
 }
+.mt--1em{
+  margin-top: -1em;
+}
 
 /* paddings */
 .p-02-05em{
