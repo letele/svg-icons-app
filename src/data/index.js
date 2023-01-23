@@ -9,5 +9,4 @@ export { workData } from "./documents";
 export { webDevStats } from "./webApplications";
 export { webAppsData } from "./webApplications";
 export { packagesData } from "./webApplications";
-export { templatesData } from "./webApplications";
 

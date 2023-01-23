@@ -37,6 +37,8 @@ export function CommandLine(){
 
         commands[value] && value==='clear' && setCmds([]) 
 
+        commands[value] && value==='blur' && ref.current.blur()
+
         commands[value] && commands[value].type==='route' &&
         redirect(commands[value].route)
 
@@ -69,7 +71,10 @@ export function CommandLine(){
     const sectionStyles =`w-100pc ovy-auto ovx-hide p-05em`
 
     return (
-        <div className={divStyles}  onClick={handleFocus}>  
+        <div 
+            className={divStyles}    
+            onClick={handleFocus}
+        >  
             <header className={headerStyles}>
                 <img src={avatar} alt="avatar pic" className={imgStyles}/>
                 <p>:Letele\Motebang\portfolio</p>
@@ -89,7 +94,7 @@ export function CommandLine(){
                 />
             </form>
 
-            <section 
+            <section
                 className={sectionStyles}
                 style={{height:'calc(100% - 50px)'}}
             >{

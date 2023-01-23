@@ -19,6 +19,10 @@ export const commands = {
         route:"/blog",
         type:"route",
     },
+    blur:{
+        info:"Blurs input field.",
+        type:"exe",
+    },
     clear:{
         info:"Clears the output screen.",
         type:"exe",
