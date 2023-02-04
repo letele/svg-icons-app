@@ -18,16 +18,23 @@ export function BarChart(){
         const u1Styles = "poa w-100pc h-100pc flex jus-even rotX-180"
 
         const liStyles = `
-            por w-10pc rotX-180 bg-8dc flex ali-e jus-c
+            por w-10pc rotX-180 bg-8dc0d4 flex ali-e jus-c
         `
         
         const spanStyles = `
             poa b--35px bg-ccc br-50pc flex ali-c jus-c 
-            fs-15px w-30px h-30px hov-b-ccc hov-bgfff
+            fs-15px w-30px h-30px hov-bdccc hov-bgfff
         `
         
         return (
-            <ul className={u1Styles}>{
+            <ul className={u1Styles}>
+                <style>{`
+                    @keyframes fill{
+                        from{height: 0;}
+                        top{height: 100%;}
+                    }
+                `}</style>
+                {
                 dataAnalystStats.map(i => {
                     const Icon = icons[i.name]
                     return (
@@ -36,8 +43,6 @@ export function BarChart(){
                             className={liStyles}
                             style={{height:getHeight(i.rate)}}
                         >
-                        
-
                             {active && active.name===i.name && <div 
                                 className="poa w-100pc h-100pc fill"
                                 style={{
@@ -67,10 +72,10 @@ export function BarChart(){
         return (
             <article className="h-300px w-450px ml-2em por nunitosans">
                 <h3 className="txt-c mb-05em">Data analysis tools</h3>
-                <span className="poa trot-90 t-100px l--18em lsp-05em">Confidence</span>
+                <span className="poa rot--90 t-115px l--18em lsp-05em">Confidence</span>
                 <span className="poa b--10px l-50pc lsp-05em">Tools</span>
                 <ul className={ulStyles}>
-                    {[5,4,3,2,1].map(i => <li key={i} className="por btdash-lgray">
+                    {[5,4,3,2,1].map(i => <li key={i} className="por btd-9c9c9c">
                         <span className="poa l--08em t--06em">{i}</span>
                     </li>)}
                     <Bars />
@@ -101,5 +106,4 @@ export function BarChart(){
             </article>
         </div>
     )
-
 }

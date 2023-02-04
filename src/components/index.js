@@ -1,6 +1,3 @@
-
-
-
 // Components
 export { PageModal } from "./PageModal";
 
@@ -31,14 +28,6 @@ export { CoverLetter,School,Work } from "./documents";
 export {About,Help,Hobbies,Location,Ls} from "./landing";
 
 
-
-
-
-
-
-
-
-
 // Higher Order Components
 export { withModal } from "./hoc";
 
@@ -48,7 +37,7 @@ export { withAnimation } from "./hoc";
 
 export { withAccordion } from "./hoc";
 
-// Context
-export { withUIContext,UIContext } from "./hoc";
+export { withProgress } from "./hoc";
+
 
 

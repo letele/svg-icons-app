@@ -37,7 +37,6 @@ export const BaseTab = ({tabs}) => {
                     style={{height:"calc(100% - 30px)"}} 
                 ><tab.component /></article>
             ))}
-
         </div>
     )
 }

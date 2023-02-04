@@ -1,7 +1,7 @@
 export const notebooksData = [
     {
         name: "Exploratory data analysis",
-        repo:"https://github.com/letele/exploratory-data-analysis",
+        repo:"https://github.com/letele/exploratory-data-analysis#readme",
         description: [
             "An overview of key concepts used when analysing and exploring patterns in data.",
             "There are two  successive notebooks:"
@@ -29,7 +29,7 @@ export const notebooksData = [
     },
     {
         name: "Hello digits",
-        repo:"https://github.com/letele/hello-digits",
+        repo:"https://github.com/letele/hello-digits#readme",
         description:[
             "A neural network model that identifies hand written digits.",
             "The model follows a three layer architecture(Input, 1 hidden, and output layer).",
@@ -50,7 +50,7 @@ export const notebooksData = [
     },
     {
         name:"Introduction to language models",
-        repo:"https://github.com/letele/introduction-to-language-models",
+        repo:"https://github.com/letele/introduction-to-language-models#readme",
         description:[
             "An autoregressive character level language model for creating names.",
             "There are two  successive notebooks:"

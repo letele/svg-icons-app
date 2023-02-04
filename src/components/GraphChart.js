@@ -1,139 +1,144 @@
 import { useState } from "react"
+import { useInterval } from "@letele/hook-me-up"
 import {
     Html5,Css3,Javascript,Firebase,React,
     Next,Typescript,Flask, Puppeteer,Hand
 } from "@letele/svg-icons"
 
 import {webDevStats} from "../data"
+import { withProgress } from "."
 
 export function GraphChart(){
 
     const [active, setActive]= useState(null)
 
-    const handleActive = (i) => {
-        const index = Object.keys(icons).indexOf(i.name)
-        setActive(
-            active?i.name===active.name?null:{...i,index}:{...i,index}
-        )
-    }
-
-    const icons = {
-        Html5,Css3,Javascript,Firebase,React,
-        Next,Typescript,Flask, Puppeteer,Hand
-    }
-
-    const pos = [
-        [8,3,30,275],[13,2,50,315],[14,7,44,354],[14,11,50,28],
-        [9,13,38,74],[4,14,50,119],[2,10,41,153],[1,4,50,210],
-        [4,1,50,240],
-    ]
-
-    const activeConic = (rate) => `conic-gradient(
-        #61cfa1 ${rate*360}deg, #ccc 0deg
-    )`
-    
-    const defaultConic = (i) => `conic-gradient(
-        #8dc0d4 ${i.rate*360}deg, #ccc 0deg
-    )`
-
-    const setConic = (i) => active && active.name===i.name ?
-    activeConic(i.rate):defaultConic(i)
-
-    
-    const Edges = () => {
-        const divStyles=`
-            poa c-arrow t-15pc l-15pc h-70pc w-70pc bg-white br-50pc 
-            flex ali-c jus-c
-        `
-        return (
-            webDevStats.map((i,j) => {
-                const gridColumn = `${pos[j][0]}/${pos[j][0]+2}`
-                const gridRow = `${pos[j][1]}/${pos[j][1]+2}`
-                const Icon = icons[i.name]
-
-                return (                    
-                    <div 
-                        key={`no${j}`}
-                        style={{background:setConic(i),gridColumn, gridRow}}
-                        className="br-50pc fs-11em por"
-                        onClick={() => handleActive(i)}
-                    >
-                        <div className={divStyles}>
-                            {active?i.name===active.name?i.rate*100: <Icon />: <Icon />}
-                        </div>
-                    </div>
-                    
-                )
-            })
-        )
-    }
-    
-    const Vertices = () => {
-
-        const isActive = i=>  pos[active.index][3]===i[3] 
-
-        const top =(i) => `1px solid ${active ?isActive(i) ? 
-            "#61cfa1":"#555":"#555"
-        }`
-
-        const divStyles = `line poa l-50pc t-50pc z--1 torigin-tl`
-
-        return(
-            pos.map((i,j)=>{
-                return(
-                    <div 
-                        key={j}
-                        className={divStyles}
-                        style={{
-                            borderTop:top(i),
-                            width:`${i[2]}%`,
-                            transform:`rotate(${i[3]}deg)`
-                        }}
-                    ></div>
-                )
-            })
-        )
-    }
+    const handleActive = i => 
+    setActive( active?(i.key===active.key?null:i):i )
 
     const Center = () => {
-        const Icon = icons[active?active.name:"Hand"]
+
+        const interval = useInterval(0,active ? active.rate*100:0,15)
+
+        const radius = 33
+        const diameter = `${radius*2}px`
+
+        const position = `calc(50% - ${radius}px)`
+
+        const div1Styles = "poa fs-2em z-1"
+        
+        const  Active = active && withProgress(
+            active.icon,radius,0.18,interval,"#61cfa1","#ccc"
+        )
+
+        const Default = () => <div
+            className="bg-61cfa1 flex br-50pc ali-c jus-c"
+            style={{height: diameter, width: diameter}}
+        ><Hand /></div>
+
         return (
             <div 
-                className="bg-61cfa1 br-50pc flex ali-c jus-c fs-2em"
-                style={{gridColumn:"7/10",gridRow:"7/10"}}
+                className={div1Styles}   
+                style={{left:position, top:position}}     
+            >{active? <Active/> :<Default />}</div>
+        )
+    }
+
+    const withNode = (Comp,length,radius,deg,isActive) =>() =>{
+        
+        const diameter = `${radius*2}px`
+        
+        const Edge = () => <div 
+            className={
+                active?isActive===active.key?'bt-61cfa1':'bt-555':'bt-555'
+            }
+            style={{width: `calc(100% - ${diameter})`}} 
+        ></div>
+        
+        const Vertex = () => <div
+            className="poa r-0 flex ali-c jus-c fs-12em br-50pc"
+            style={{
+                height: diameter, width: diameter,
+                transform:`rotate(${-deg}deg)`
+            }}
+        ><Comp/></div>
+
+        return (
+            <div 
+                className="poa bg-555 z-0 flex ali-c l-50pc t-50pc torigin-tl"
+                style={{ width:`${length}%`, transform:`rotate(${deg}deg)`,}}
             >
-                <Icon />
+                <Edge />
+                <Vertex />
             </div>
         )
     }
 
-    const Graph = () => {
+    const nodes = [
+        {key:"Javascript",icon:Javascript,length:50},
+        {key:"Firebase",icon:Firebase,length:54},
+        {key:"React",icon:React,length:39},
+        {key:"Next",icon:Next,length:50},
+        {key:"Typescript",icon:Typescript,length:42},
+        {key:"Flask",icon:Flask,length:54},
+        {key:"Puppeteer",icon:Puppeteer,length:52},
+        {key:"Html5",icon:Html5,length:36},
+        {key:"Css3",icon:Css3,length:50},
+    ]
+
+    const Nodes = () => nodes.map((node,j) => {
+
+        const rate = webDevStats.filter(i => i.name === node.key)[0].rate
+        
+        const [deg,radius] = [Math.round(360/nodes.length)*j +10,21]
+
+        const ProgressIcon =withProgress(
+            node.icon,radius,0.24,rate*100,"#8dc0d4","#ccc"
+        )
+
+        const ProgressPerc = () => {
+
+            const interval = useInterval(0,rate*100,15)
+            const reverseInterval = useInterval(rate*100,0,15)
+            
+            const Comp = () =>
+            <div className="c-arrow">{interval}</div>
+            
+            const Perc =withProgress(
+                Comp,radius,0.24,reverseInterval,"#8dc0d4","#ccc"
+            )
+            
+            return <Perc />
+        }
+
+        const Node = withNode(
+            active && active.key===node.key? ProgressPerc:ProgressIcon, 
+            node.length, radius,deg,node.key
+        )
+        
         return (
-            <div className="grid gr-c15 gr-r15 w-330px h-330px por ov-auto">
-                <Center />    
-                <Edges />
-                <Vertices />
+            <div key={node.key} 
+                onClick={() => handleActive({...node,rate})}
+            >
+                <Node />
             </div>
         )
-    }
-
-    const Info = ({iconName}) => {
-        const Icon = icons[iconName]
-        return (
-            <div>
-                <p><Icon className="fs-25em mr-03em "  /> {active.name}</p>
-                <p>Confidence level: {active.rate*100}%</p>
-            </div>
-        )
-    }
-
+    })
+    
     return (
         <div className="w-fcnt nunitosans">
             <h3 className="mb-1em txt-c">Web development tools</h3>
             
-            <Graph />
+            <div className="por w-330px h-330px">
+                <Center />    
+                <Nodes />
+            </div>
             
-            {active && <Info iconName={active.name}/>}
+            {active && <div>
+                <p><active.icon className="fs-25em mr-03em" /> 
+                    {active.key}
+                </p>
+                <p>Confidence level: {active.rate*100}%</p>
+            </div>}
         </div>
     );
 }

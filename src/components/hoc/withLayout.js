@@ -4,10 +4,9 @@ import {FaBars} from "react-icons/fa"
 import {  useToggle } from '@letele/hook-me-up'
 import {
     AnalyticsChart, Blog, FillingFiles, Hand, 
-    DesignTools, Twitter, Github, Linkedin
+    DesignTools, Github, Linkedin, Stackoverflow
 } from "@letele/svg-icons"
 import avatar from '../../imgs/avatar.jpg'
-
 
 export const withLayout = (Component, pageName) => props => {
 
@@ -31,7 +30,7 @@ export const withLayout = (Component, pageName) => props => {
 
         const navStyles = `
             landscape glass bg-3b4452a6 c-fff fs-12px  lsp-05em 
-             poa z-0 pt-05em b-30px ${toggle && 'slide1'} 
+            poa z-0 pt-05em b-30px ${toggle && 'slide1'} 
         `
 
         const liStyles =`
@@ -63,12 +62,12 @@ export const withLayout = (Component, pageName) => props => {
 
     const MenuBar = () => {
 
-        const divStyles = "bg-3b4452 poa z-1 w-100pc h-100pc flex ali-c jus-btwn"
+        const divStyles = "bg-3b4452 poa z-1 w-100pc h-100pc flex ali-c jus-btwn c-faf8f8"
           
         const centerStyles = "flex ali-c jus-c"
 
         const menuIconStyles = `
-            ${toggle && 'bg-cccccc54'} ${centerStyles} c-faf8f8 
+            ${toggle && 'bg-cccccc54'} ${centerStyles}  
         `
 
         return(
@@ -91,13 +90,13 @@ export const withLayout = (Component, pageName) => props => {
                         ><Linkedin /></a>
                     </li>
                     <li className= {`${centerStyles} pt-03em`}><a 
-                            href = "https://twitter.com/mtletele"
+                            href = "https://stackoverflow.name/newbie"
                             rel="noopener noreferrer"
                             target="_blank" 
-                        ><Twitter /></a>
+                        ><Stackoverflow /></a>
                     </li>
                 </ul>
-                <ul className='mr-05em c-fff fs-12px lsp-05em'>
+                <ul className='mr-05em fs-12px lsp-05em'>
                     <li>&copy; 2023</li>
                 </ul>
             </div>
@@ -110,7 +109,7 @@ export const withLayout = (Component, pageName) => props => {
         poa t-0 h-60px w-100pc p-03em pl-1em flex ali-c 
         nunitosans fs-15px lsp-05em fw-600
     `
-
+    
     const sectionStyles = "poa w-100pc t-60px linear-05s"
 
     const imgStyles = 'w-50px h-50px br-50pc mr-05em linear-05s'
