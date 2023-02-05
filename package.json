@@ -18,7 +18,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "predeploy": "npm run build",
+    "predeploy": "rimraf build && npm run build",
     "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -42,8 +42,9 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://letele.github.io/portfolio",
   "devDependencies": {
-    "gh-pages": "^5.0.0"
-  }
+    "gh-pages": "^5.0.0",
+    "rimraf": "^4.1.2"
+  },
+  "homepage": "https://letele.github.io/portfolio"
 }
